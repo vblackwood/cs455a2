@@ -22,7 +22,7 @@
 constexpr char FILE_LOCATION[] = "/usr/share/misc/zipcodes";
 
 int
-main(int argc, char *argv[])
+main(char hostname[])
 {
     return 0;
 }
