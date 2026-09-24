@@ -1,18 +1,21 @@
-#ifndef MEMBER_HPP
-#define MEMBER_HPP
+#ifndef MEMBER_H
+#define MEMBER_H
 
-#include <cstring>
-#include <Date.hpp>
+#include <string>
+#include <Date.h>
 
 class Member {
     protected:
-        char[] first;
-        char[] last;
-        char[] email;
+        std::string first;
+        std::string last;
+        std::string email;
         Date joined;
     public:
-        Member(char[] first, char[] last, char[] email, Date joined);
-        // getters for full name and all protected fields
-};
+        Member(std::string first, std::string last, std::string email, Date joined);
+        string getFirst() const;
+        string getLast() const;
+        string getName() const;
+        string getEmail() const;
+        Date getJoined() const;
 
 #endif
