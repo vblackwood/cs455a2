@@ -1,6 +1,7 @@
-#ifndef DATE_HPP
-#define DATE_HPP
+#ifndef DATE_H
+#define DATE_H
 
+#include <iostream>
 class Date {
 
 private:
@@ -11,7 +12,7 @@ private:
 public:
     Date(unsigned short year, unsigned short month, unsigned short day);
     // operator<<()
-
+    friend std::ostream& operator<<(std::ostream& os, const Date& date);
 };
 
 #endif

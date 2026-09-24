@@ -1,8 +1,9 @@
-#ifndef DATETIME_HPP
-#define DATETIME_HPP
+#ifndef DATETIME_H
+#define DATETIME_H
 
-#include <Date.hpp>
-#include <Time.hpp>
+#include "Date.h"
+#include "Time.h"
+#include <iostream>
 
 class DateTime {
 
@@ -11,8 +12,9 @@ private:
     Time time;
 
 public:
-    DateTime(Date date, Time time);
+    DateTime(Date d, Time t);
     // operator<<()
+    friend std::ostream& operator<<(std::ostream& os, const DateTime& dt);
 
 };
 
