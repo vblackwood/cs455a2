@@ -1,6 +1,7 @@
 CCC     =g++
 CXXFLAGS=-Wall -std=c++17
 
+
 .PHONY: all clean
 
 all: server client
