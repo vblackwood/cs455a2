@@ -4,7 +4,7 @@
 #include "Date.h"
 #include "Member.h"
 
-enum OFFICER_ROLE {
+enum class OFFICER_ROLE {
     PRESIDENT,
     VICE_PRESIDENT,
     TREASURER,

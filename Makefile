@@ -1,14 +1,13 @@
-CCC     =g++
-CXXFLAGS=-Wall -std=c++17
+CXX		:= g++
+CXXFLAGS	:= -Wall -std=c++17
 
 
 .PHONY: all clean
 
-all: server client
+all:	main
 
-server: zip_server.c
-	${CC} ${CFLAGS} -o server zip_server.c
-client: zip_client.c
-	${CC} ${CFLAGS} -o client zip_client.c
+main:	main.cpp
+	${CXX} ${CXXFLAGS} -o main main.cpp
+
 clean:
-	@rm -f server client
+	@rm -f main
