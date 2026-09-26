@@ -4,6 +4,8 @@
 
 #include "DateTime.h"
 
+namespace club {
+
 // constructor
 DateTime::DateTime(Date d, Time t) : date(d), time(t) {}
 
@@ -11,4 +13,6 @@ DateTime::DateTime(Date d, Time t) : date(d), time(t) {}
 std::ostream& operator<<(std::ostream& os, const DateTime& dt) {
     os << dt.date << " " << dt.time;
     return os;
+}
+
 }

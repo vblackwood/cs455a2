@@ -1,12 +1,13 @@
 #include "Event.h"
+namespace club {
 
-    Event::Event(string name, string description, DateTime start, DateTime end, string location) : this->name(name), this->description(description), this->start(start), this->end(end), this->location(location){}
+    Event::Event(std::string name, std::string description, DateTime start, DateTime end, std::string location) : name(name), description(description), start(start), end(end), location(location){}
 
-    string Event::get_name() const {
+    std::string Event::get_name() const {
         return name;
     }
 
-    string Event::get_description() const {
+    std::string Event::get_description() const {
         return description;
     }
 
@@ -18,8 +19,8 @@
         return end;
     }
 
-    string Event::get_location() const {
+    std::string Event::get_location() const {
         return location;
     }
 
-#endif
+}

@@ -4,6 +4,8 @@
 
 #include "Time.h"
 
+namespace club {
+
 // constructor
 Time::Time(unsigned short hour, unsigned short minute, char am_pm) {
     if (am_pm == 'P' || am_pm == 'p') {
@@ -48,5 +50,7 @@ std::ostream& operator<<(std::ostream& os, const Time& time) {
     os << time.minute << " " << am_pm << "M";
 
     return os;
+
+}
 
 }

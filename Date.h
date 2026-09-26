@@ -2,6 +2,9 @@
 #define DATE_H
 
 #include <iostream>
+
+namespace club {
+
 class Date {
 
 private:
@@ -14,5 +17,7 @@ public:
     // operator<<()
     friend std::ostream& operator<<(std::ostream& os, const Date& date);
 };
+
+}
 
 #endif

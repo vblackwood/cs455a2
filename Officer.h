@@ -1,8 +1,12 @@
 #ifndef OFFICER_H
 #define OFFICER_H
 
+#include <string>
+
 #include "Date.h"
 #include "Member.h"
+
+namespace club {
 
 enum class OFFICER_ROLE {
     PRESIDENT,
@@ -18,9 +22,10 @@ class Officer : public Member {
         OFFICER_ROLE role;
         Date expiration;
     public:
-        Officer(string first, string last, string email, Date joined, role OFFICER_ROLE, Date expiration);
+        Officer(std::string first, std::string last, std::string email, Date joined, OFFICER_ROLE role, Date expiration);
         OFFICER_ROLE get_role() const;
         Date get_expiration() const;
 };
 
+}
 #endif

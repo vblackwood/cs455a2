@@ -5,6 +5,8 @@
 #include "Time.h"
 #include <iostream>
 
+namespace club {
+
 class DateTime {
 
 private:
@@ -17,5 +19,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const DateTime& dt);
 
 };
+
+}
 
 #endif

@@ -4,6 +4,8 @@
 
 #include "Date.h"
 
+namespace club {
+
 Date::Date(unsigned short year, unsigned short month, unsigned short day) {
     this->year = year;
     this->month = month;
@@ -21,4 +23,6 @@ std::ostream& operator<<(std::ostream& os, const Date& date) {
     os << date.day << "/" << date.year;
 
     return os;
+}
+
 }

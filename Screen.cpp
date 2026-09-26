@@ -1,5 +1,6 @@
 #include "Screen.h"
 #include <iostream>
+#include <limits>
 
 namespace textui {
     Screen::Screen(
@@ -22,6 +23,7 @@ namespace textui {
     char Screen::get_choice() {
         char choice;
         std::cin >> choice;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return choice;
     }
 }

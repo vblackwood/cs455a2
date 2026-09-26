@@ -1,46 +1,26 @@
-CXX		:= g++
-CXXFLAGS	:= -Wall -std=c++17
+#Intermediate Makefile example
 
+# create a compiler flags variable
+SRCS=main.cpp Date.cpp DateTime.cpp Time.cpp Member.cpp Officer.cpp Event.cpp Club_roster.cpp Club_app.cpp Menu_item.cpp Menu.cpp Screen.cpp
+OBJS=${SRCS:S/cpp$/o/g}
+PROG=club_app
 
-.PHONY: 	all clean
+CXXFLAGS=-Wall -std=c++23
 
-all:		main date datetime time member officer event roster app menuitem menu screen
+.PHONY: all clean pack unpack
 
-main:		main.cpp
-		${CXX} ${CXXFLAGS} -o main main.cpp
+all: ${PROG}
 
-date:		Date.cpp
-		${CXX} ${CXXFLAGS} -o date Date.cpp
+${PROG}: ${OBJS}
+	${CXX} ${CXXFLAGS} -o $@ ${OBJS}
 
-datetime:	DateTime.cpp
-		${CXX} ${CXXFLAGS} -o datetime DateTime.cpp
-
-time:		Time.cpp
-		${CXX} ${CXXFLAGS} -o time Time.cpp
-
-member:		Member.cpp
-		${CXX} ${CXXFLAGS} -o member Member.cpp
-
-officer:	Officer.cpp
-		${CXX} ${CXXFLAGS} -o officer Officer.cpp
-
-event:		Event.cpp
-		${CXX} ${CXXFLAGS} -o event Event.cpp
-
-roster:		Club_roster.cpp
-		${CXX} ${CXXFLAGS} -o roster Club_roster.cpp
-
-app:		Club_app.cpp
-		${CXX} ${CXXFLAGS} -o app Club_app.cpp
-
-menuitem:	Menu_item.cpp
-		${CXX} ${CXXFLAGS} -o menuitem Menu_item.cpp
-
-menu:		Menu.cpp
-		${CXX} ${CXXFLAGS} -o menu Menu.cpp
-
-screen:		Screen.cpp
-		${CXX} ${CXXFLAGS} -o screen Screen.cpp
+pet.o: pet.h pet.cpp
 
 clean:
-	@rm -f main date datetime time member officer event roster app menuitem menu screen
+	@rm -f ${PROG} ${OBJS}
+
+pack:
+	@zip -j files.zip *.cpp *.h Makefile
+
+unpack:
+	@unzip -j files.zip

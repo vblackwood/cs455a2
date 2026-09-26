@@ -1,23 +1,27 @@
 #include "Member.h"
 
-Member::Member(std::string first, std::string last, std::string email, Date joined) : this->first(first), this->last(last), this->email(email), this->joined(joined) {}
+namespace club {
 
-string Member::get_first() const {
+Member::Member(std::string first, std::string last, std::string email, Date joined) : first(first), last(last), email(email), joined(joined) {}
+
+std::string Member::get_first() const {
     return first;
 }
 
-string Member::get_last() const {
+std::string Member::get_last() const {
     return last;
 }
 
-string Member::get_name() const {
+std::string Member::get_name() const {
     return first + " " + last;
 }
 
-string Member::get_email() const {
+std::string Member::get_email() const {
     return email;
 }
 
 Date Member::get_joined() const {
     return joined;
+}
+
 }

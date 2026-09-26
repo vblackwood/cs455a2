@@ -3,20 +3,26 @@
 
 #include <string>
 
+#include "DateTime.h"
+
+namespace club {
+
 class Event {
     private:
-        string name;
-        string description;
+        std::string name;
+        std::string description;
         DateTime start;
         DateTime end;
-        string location;
+        std::string location;
     public:
-        Event(string name, string description, DateTime start, DateTime end, string location);
-        string get_name() const;
-        string get_description() const;
+        Event(std::string name, std::string description, DateTime start, DateTime end, std::string location);
+        std::string get_name() const;
+        std::string get_description() const;
         DateTime get_start() const;
         DateTime get_end() const;
-        string get_location() const;
+        std::string get_location() const;
 };
+
+}
 
 #endif
